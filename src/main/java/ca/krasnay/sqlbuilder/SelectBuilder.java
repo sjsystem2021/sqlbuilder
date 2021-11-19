@@ -254,6 +254,15 @@ public class SelectBuilder extends AbstractSqlBuilder implements Cloneable, Seri
         return this;
     }
 
+    public SelectBuilder orderBy(String name, boolean ascending, String ext) {
+        if (ascending) {
+            orderBys.add(name + " asc" + ext);
+        } else {
+            orderBys.add(name + " desc" + ext);
+        }
+        return this;
+    }
+
     @Override
     public String toString() {
 
