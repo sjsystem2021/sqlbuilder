@@ -295,9 +295,9 @@ public class SelectBuilder extends AbstractSqlBuilder implements Cloneable, Seri
         }
 
         if(limit > 0)
-            sql.append(" limit " + limit);
+            sql.append(" limit ").append(limit);
         if(offset > 0)
-            sql.append(", " + offset);
+            sql.append(" offset ").append(offset);
 
         return sql.toString();
     }
